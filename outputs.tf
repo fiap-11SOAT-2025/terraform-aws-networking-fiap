@@ -15,6 +15,5 @@ output "vpc_cidr_block" {
 
 output "public_subnets" {
   description = "IDs das subnets públicas para uso externo"
-  # Mude de aws_subnet.public[*].id PARA:
-  value       = module.vpc.public_subnets
+  value       = module.vpc.public_subnets # <--- Aqui sim usamos "module.vpc"
 }
