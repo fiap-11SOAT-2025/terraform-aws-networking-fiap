@@ -14,10 +14,7 @@ output "vpc_cidr_block" {
 }
 
 output "public_subnets" {
-  description = "Lista de IDs das subnets públicas"
-  # O valor depende de como você criou. Se usou 'count' no recurso aws_subnet.public:
-  value       = aws_subnet.public[*].id
-  
-  # OU, se você usou um módulo pronto (ex: module.vpc), seria algo como:
-  # value = module.vpc.public_subnets
+  description = "IDs das subnets públicas para uso externo"
+  # Mude de aws_subnet.public[*].id PARA:
+  value       = module.vpc.public_subnets
 }
