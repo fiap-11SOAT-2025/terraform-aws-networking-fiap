@@ -17,8 +17,6 @@ output "vpc_cidr_block" {
 }
 
 output "public_subnets" {
-  description = "IDs das subnets públicas para uso externo"
-  # Mude de aws_subnet.public[*].id PARA:
-  value       = module.vpc.public_subnets
+  description = "IDs das subnets públicas exportados pelo módulo"
+  value       = aws_subnet.public[*].id  # <--- Referência direta ao recurso
 }
-
