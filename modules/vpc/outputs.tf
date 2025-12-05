@@ -19,3 +19,4 @@ output "vpc_cidr_block" {
   description = "O bloco CIDR da VPC."
   value       = aws_vpc.main.cidr_block 
 }
+
